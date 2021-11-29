@@ -5,12 +5,15 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../../foundation/globalStyles";
 import theme from "../../theme";
 
+import Header from "../organisms/Header"
+
 const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
       <ThemeProvider theme={theme}>
         <>
+          <Header />
           {children}
         </>
       </ThemeProvider>
