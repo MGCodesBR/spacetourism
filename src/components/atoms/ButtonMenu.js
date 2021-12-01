@@ -22,6 +22,7 @@ export const BarButton = styled.div`
    height: 100%;
    background-color: black;
    margin: 0;
+   transition: 0.3s;
    &:not(:last-child) {
       margin-bottom: 0.5rem;
    }
@@ -38,9 +39,9 @@ export const BarButton = styled.div`
    }
 `
 
-const ButtonMenu = ({ isOpen=false, className }) => {
+const ButtonMenu = ({ onClick, isOpen=false, className }) => {
    return (
-      <Container className={className} >
+      <Container onClick={onClick} className={className} >
          <WrapButton>
             <BarButton className={`${ isOpen ? "-open1" : "" }`} />
             <BarButton className={`${ isOpen ? "-open2" : "" }`} />

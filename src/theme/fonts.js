@@ -34,9 +34,13 @@ const fonts = {
       heading5: "2.8rem",
       subheading1: "2.8rem",
       subheading2: "1.4rem",
-      navlink: "1.6rem",
+      navlink1: "1.6rem",
+      navlink2: "1.4rem",
       text: "1.8rem",
    },
+   charspace: {
+      navlink: "2.7px"
+   }
 };
  
 export default fonts; 

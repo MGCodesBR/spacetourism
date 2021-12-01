@@ -9,6 +9,7 @@ const LinkLogo = styled(Link)`
    height: 100%;
    display: flex;
    align-items: center;
+   cursor: pointer;
 `
 
 const LabelLogo = styled.span`
@@ -24,7 +25,7 @@ const Img = styled.img`
 
 const Brand = ({ className }) => {
    return (
-      <LinkLogo className={className}>
+      <LinkLogo to="/" className={className}>
          <LabelLogo>Space Tourism</LabelLogo>
          <Img src={imgLogo} alt="logo Space Tourism" />
       </LinkLogo>
