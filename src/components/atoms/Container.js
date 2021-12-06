@@ -12,30 +12,14 @@ const ContainerArea = styled.div`
    padding: 0;
 background-color: green;
 
-   ${media.greaterThan("sm")`
-      max-width: ${props => props.theme.maxWidth.sm};
-      
-background-color: black;
-   `}
-
    ${media.greaterThan("md")`
       max-width: ${({ theme }) => theme.maxWidth.md};
 background-color: blue;
    `}
 
-   ${media.greaterThan("lg")`
-      max-width: ${({ theme }) => theme.maxWidth.lg};
-background-color: green;
-   `}
-
    ${media.greaterThan("xl")`
       max-width: ${({ theme }) => theme.maxWidth.xl};
 background-color: purple;
-   `}
-
-   ${media.greaterThan("xxl")`
-      max-width: ${({ theme }) => theme.maxWidth.xxl};
-background-color: chocolate;
    `}
 
 `

@@ -37,9 +37,11 @@ const fonts = {
       navlink1: "1.6rem",
       navlink2: "1.4rem",
       text: "1.8rem",
+      ctaxs: "2rem",
    },
    charspace: {
-      navlink: "2.7px"
+      navlink: "2.7px",
+      ctaxs: "1.25px"
    }
 };
  
