@@ -3,9 +3,6 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const ButtonLink = styled(Link)`
-   width: 15rem;
-   height: 15rem;
-
    position: relative;
    display: flex;
    justify-content: center;

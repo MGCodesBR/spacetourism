@@ -35,7 +35,7 @@ const HeaderSection = styled.header`
    top: 0;
    width: 100%;
    height: 8.8rem;
-background-color: rgba(0,0,0,0.9);
+   background-color: transparent;
    display: flex;
    justify-content: space-between;
    align-items: center;

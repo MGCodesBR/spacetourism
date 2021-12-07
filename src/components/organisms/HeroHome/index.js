@@ -5,6 +5,9 @@ import { HomeSection,
          HomeGrid,
          HomeLeftSide,
          HomeRightSide,
+         HomeTitle,
+         HomeSubTitle,
+         HomeParagraph,
          HomeButtonCta } from "./styles"
 
 const HeroHome = ({ className }) => {
@@ -13,9 +16,11 @@ const HeroHome = ({ className }) => {
          <HomeContainer>
             <HomeGrid>
                <HomeLeftSide>
-                  <h2>SO, YOU WANT TO TRAVEL TO</h2>
-                  <h1>SPACE</h1>
-                  <p>Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+                  <HomeSubTitle>So, You want to travel to</HomeSubTitle>
+                  <HomeTitle>Space</HomeTitle>
+                  <HomeParagraph>
+                     Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
+                  </HomeParagraph>
                </HomeLeftSide>
                <HomeRightSide>
                   <HomeButtonCta label="Explore" target="/" />
