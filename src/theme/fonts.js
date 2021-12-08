@@ -44,10 +44,12 @@ const fonts = {
       bodyxl: "1.8rem",
       // text: "1.8rem",
       ctaxs: "2rem",
+      ctamd: "3.2rem",
    },
    charspace: {
       navlink: "2.7px",
       ctaxs: "1.25px",
+      ctamd: "2px",
       subheadingxs: "2.7px",
       subheadingmd: "3.38px",
       subheadingxl: "4.73px",

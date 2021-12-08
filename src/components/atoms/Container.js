@@ -10,16 +10,14 @@ const ContainerArea = styled.div`
    align-items: center;
    margin: 0 auto;
    padding: 0;
-background-color: green;
+   background-color: transparent;
 
    ${media.greaterThan("md")`
       max-width: ${({ theme }) => theme.maxWidth.md};
-background-color: blue;
    `}
 
    ${media.greaterThan("xl")`
       max-width: ${({ theme }) => theme.maxWidth.xl};
-background-color: purple;
    `}
 
 `
