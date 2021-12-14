@@ -16,7 +16,7 @@ const NavMain = ({ isActive }) => {
                </Action>
             </Item>
             <Item>
-               <Action to="" activeClassName="-active">
+               <Action to="/destination" activeClassName="-active">
                   <SpanNumber>01</SpanNumber>Destination
                </Action>
             </Item>

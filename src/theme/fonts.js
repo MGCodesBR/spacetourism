@@ -29,7 +29,9 @@ const fonts = {
    size: {
       heading1xs: "8rem",
       heading1md: "15rem",
-      // heading2: "10rem",
+      heading2xs: "5.6rem",
+      heading2md: "8rem",
+      heading2xl: "10rem",
       // heading3: "5.6rem",
       // heading4: "3.2rem",
       // heading5: "2.8rem",
@@ -45,6 +47,8 @@ const fonts = {
       // text: "1.8rem",
       ctaxs: "2rem",
       ctamd: "3.2rem",
+      bookmarktitle: "1.4rem",
+      bookmarkvalue: "2.8rem"
    },
    charspace: {
       navlink: "2.7px",
@@ -53,6 +57,7 @@ const fonts = {
       subheadingxs: "2.7px",
       subheadingmd: "3.38px",
       subheadingxl: "4.73px",
+      bookmarktitle: "2.36px"
    }
 };
  

@@ -9,6 +9,7 @@ const colors = {
       main: "#FFFFFF",
       dark: "#979797",
    },
+   stroke: "#383B4B",
 };
  
 export default colors;

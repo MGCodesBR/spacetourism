@@ -10,8 +10,7 @@ const IndexPage = () => {
       <Layout>
          <Seo 
             lang="pt-BR"
-            title="MGCodes Template | GatsbyJS v1.0"
-            keywords=""
+            title="Home | Space Tourism"
          />
          <HeroHome 
             title="Space"
