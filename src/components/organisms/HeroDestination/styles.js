@@ -21,15 +21,16 @@ const DestinationSection = styled(Section)`
    background-size: cover;
    background-position: 0 0;
 
-   /* ${media.greaterThan("md")`
-      min-height: 90rem;
+   ${media.greaterThan("md")`
+      height: 100%;
+      min-height: 102.4rem;
       background-image: url(${BackImageTablet});
    `}
 
    ${media.greaterThan("xl")`
-      min-height: 70rem;
+      min-height: 90rem;
       background-image: url(${BackImageDesktop});
-   `} */
+   `}
 
 `
        
@@ -40,15 +41,15 @@ const DestinationContainer = styled(Container)`
    margin: 0;
    background-color: transparent;
 
-   /* ${media.greaterThan("md")`
-      max-width: 44.5rem;
-      padding: 20.2rem 0 9rem;
+   ${media.greaterThan("md")`
+      max-width: ${props => props.theme.maxWidth.md};
+      padding: 13.6rem 0 6.2rem;
    `}
 
    ${media.greaterThan("xl")`
       max-width: ${props => props.theme.maxWidth.xl};
-      padding: 20.2rem 0 13.1rem;
-   `} */
+      padding: 21.2rem 0 11.8rem;
+   `}
 
 `
 
@@ -56,6 +57,20 @@ const DestinationPageTitle = styled(SubTitle)`
    ${SubTitleStyles}
    color: ${props => props.theme.colors.secondary.main};
    margin-bottom: 3.2rem;
+
+   ${media.greaterThan("md")`
+      font-size: ${props => props.theme.fonts.size.subheading1md};
+      letter-spacing: ${props => props.theme.fonts.charspace.subheadingmd};
+      text-align: left;
+      margin-bottom: 6rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      font-size: ${props => props.theme.fonts.size.subheading1xl};
+      letter-spacing: ${props => props.theme.fonts.charspace.subheadingxl};
+      margin-bottom: 6.4rem;
+   `}
+
 `
 
 const DestinationPageNumber = styled.span`
@@ -63,6 +78,17 @@ const DestinationPageNumber = styled.span`
    color: ${props => props.theme.colors.secondary.dark};
    font-weight: bold;
    margin-right: 1.8rem;
+
+   ${media.greaterThan("md")`
+      font-size: ${props => props.theme.fonts.size.subheading1md};
+      letter-spacing: ${props => props.theme.fonts.charspace.subheadingmd};
+   `}
+
+   ${media.greaterThan("xl")`
+      font-size: ${props => props.theme.fonts.size.subheading1xl};
+      letter-spacing: ${props => props.theme.fonts.charspace.subheadingxl};
+   `}
+
 `
 
 const DestinationLeftSide = styled(HeroLeftSide)`
@@ -71,25 +97,32 @@ const DestinationLeftSide = styled(HeroLeftSide)`
    margin: 0;
    padding-bottom: 2rem;
    text-align: center;
+
+   ${media.greaterThan("md")`
+      padding-bottom: 5.3rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      padding-bottom: 0;
+   `}
+
 `
 
 const DestinationRightSide = styled(HeroRightSide)`
 `
 
 const DestinationGrid = styled(HeroGrid)`
-
-   /* ${media.greaterThan("xl")`
-      justify-content: space-between;
+   padding: 0;
+   ${media.greaterThan("xl")`
       ${DestinationLeftSide} {
-         width: 45rem;
-         display: flex;
-         flex-direction: column;
-         justify-content: flex-end;
+         width: 60%;
+         text-align: left;
+         padding: 4rem 0 0 6rem;
       }
       ${DestinationRightSide} {
-         justify-content: flex-end;
+         width: 40%;
       }
-   `} */
+   `}
 
 `
 
@@ -97,6 +130,17 @@ const DestinationGrid = styled(HeroGrid)`
 const TabImage = styled(Image)`
    max-width: 17rem;
    max-height: 17rem;
+
+   ${media.greaterThan("md")`
+      max-width: 30rem;
+      max-height: 30rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      max-width: 44.5rem;
+      max-height: 44.5rem;
+   `}
+
 `
 
 
@@ -112,6 +156,16 @@ const TabNav = styled.nav`
    height: auto;
    margin: 0 auto 2rem;
    padding: 0;
+
+   ${media.greaterThan("md")`
+      max-width: 28.5rem;
+      margin: 0 auto 3.2rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      margin: 0 0 3.2rem;
+   `}
+
 `
 
 const ListItems = styled.ul`
@@ -154,6 +208,11 @@ const Action = styled.button`
       border-bottom: 3px solid ${props => props.theme.colors.secondary.main};
       transition: border-bottom .3s ease;
    }
+
+   ${media.greaterThan("md")`
+      font-size: ${props => props.theme.fonts.size.navlink1};
+   `}
+
 `
 
 const DestinationTitle = styled(Title)`
@@ -161,49 +220,35 @@ const DestinationTitle = styled(Title)`
    font-size: ${props => props.theme.fonts.size.heading2xs};
    margin-bottom: 0.5rem;
 
-   /* ${media.greaterThan("md")`
-      font-size: ${props => props.theme.fonts.size.heading1md};
+   ${media.greaterThan("md")`
+      font-size: ${props => props.theme.fonts.size.heading2md};
+   `}
+
+   ${media.greaterThan("xl")`
+      font-size: ${props => props.theme.fonts.size.heading2xl};
+      text-align: left;
       margin-bottom: 2rem;
    `}
 
-   ${media.greaterThan("xl")`
-      text-align: left;
-   `} */
-
 `
-
-const DestinationSubTitle = styled(SubTitle)`
-   ${SubTitleStyles}
-   margin-bottom: 3rem;
-
-   /* ${media.greaterThan("md")`
-      font-size: ${props => props.theme.fonts.size.subheading1md};
-      letter-spacing: ${props => props.theme.fonts.charspace.subheadingmd};
-   `}
-
-   ${media.greaterThan("xl")`
-      font-size: ${props => props.theme.fonts.size.subheading1xl};
-      letter-spacing: ${props => props.theme.fonts.charspace.subheadingxl};
-      text-align: left;
-      margin-bottom: 3.2rem;
-   `} */
-
-`
-
 const DestinationParagraph = styled(Paragraph)`
    ${ParagraphStyles};
    margin-bottom: 3.2rem;
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       font-size: ${props => props.theme.fonts.size.bodymd};
-      line-height: 2.8rem;
+      line-height: 1.75;
+      margin-bottom: 4.9rem;
+      padding: 0 5.45rem;
    `}
 
    ${media.greaterThan("xl")`
       font-size: ${props => props.theme.fonts.size.bodyxl};
-      text-align: left;
       line-height: 3.2rem;
-   `} */
+      margin-bottom: 5.4rem;
+      text-align: left;
+      padding: 0;
+   `}
 
 `
 
@@ -213,6 +258,16 @@ const BookMarks = styled.div`
    height: auto;
    border-top: 1px solid ${props => props.theme.colors.stroke};
    text-align: center;
+
+   ${media.greaterThan("md")`
+      display: flex;
+      padding: 0 10rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      padding: 0;
+   `}
+
 `
 
 const ScoreItem = styled.div`
@@ -227,6 +282,11 @@ const ScoreTitle = styled.p`
    letter-spacing: ${props => props.theme.fonts.charspace.bookmarktitle};
    color: ${props => props.theme.colors.primary.main};
    margin: 0;
+
+   ${media.greaterThan("xl")`
+      text-align: left;
+   `}
+
 `
 
 const ScoreValue = styled.p`
@@ -235,6 +295,11 @@ const ScoreValue = styled.p`
    color: ${props => props.theme.colors.secondary.main};
    margin: 0;
    padding: 0.2rem 0;
+
+   ${media.greaterThan("xl")`
+      text-align: left;
+   `}
+
 `
 
 export {
@@ -246,7 +311,6 @@ export {
    DestinationLeftSide,
    DestinationRightSide,
    DestinationTitle,
-   DestinationSubTitle,
    DestinationParagraph,
    DestinationTabs,
    TabNav,
