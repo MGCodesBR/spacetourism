@@ -17,6 +17,7 @@
 - **SITEMAP** -> create a sitemap for your site in production mode
 - **MANIFEST** -> provides configuration and icons to the phone (part of the PWA specification) enabled by this plugin allows users to add your site to their home screen on most mobile browsers
 - **PAGE-CREATOR** -> automatically creates pages from React components in specified directories, any that lives in the specified pages folder/subfolders to generate a page and the following giles are automatically excluded and exclude custom patterns
+- **GLIDE.JS** -> A dependency-free JavaScript ES6 slider and carousel. It’s lightweight, flexible and fast. Designed to slide. No less, no more
 
 
 ### Componentes responsivos de estrutura incluídos no template do projeto:

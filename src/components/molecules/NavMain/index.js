@@ -21,12 +21,12 @@ const NavMain = ({ isActive }) => {
                </Action>
             </Item>
             <Item>
-               <Action to="" activeClassName="-active">
+               <Action to="/crew" activeClassName="-active">
                   <SpanNumber>02</SpanNumber>Crew
                </Action>
             </Item>
             <Item>
-               <Action to="" activeClassName="-active">
+               <Action to="/" activeClassName="-active">
                   <SpanNumber>03</SpanNumber>Technology
                </Action>
             </Item>
