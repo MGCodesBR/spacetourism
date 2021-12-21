@@ -15,6 +15,7 @@ import BackImageDesktop from "../../../images/crew/background-crew-desktop.jpg"
 
 // SECTION & CONTAINER
 const CrewSection = styled(Section)`
+   position: relative;
    height: 100vh;
    min-height: 71rem;
    background-image: url(${BackImageMobile});
@@ -29,18 +30,20 @@ const CrewSection = styled(Section)`
       width: 100%;
       height: 100%;
       background-color: rgba(11,13,23,0.6);
+      padding: 0;
+      margin: 0;
    }
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       height: 100%;
-      min-height: 102.4rem;
+      min-height: 100vh;
       background-image: url(${BackImageTablet});
    `}
 
    ${media.greaterThan("xl")`
       min-height: 90rem;
       background-image: url(${BackImageDesktop});
-   `} */
+   `}
 
 `
        
@@ -52,16 +55,17 @@ const CrewContainer = styled(Container)`
    background-color: transparent;
    z-index: 5;
 
-   /* ${media.greaterThan("md")`
-      max-width: ${props => props.theme.maxWidth.md};
-      padding: 13.6rem 0 6.2rem;
+   ${media.greaterThan("md")`
+      width: 100%;
+      height: auto;
+      padding: 13.6rem 0 0;
    `}
 
    ${media.greaterThan("xl")`
       max-width: ${props => props.theme.maxWidth.xl};
-      padding: 21.2rem 0 11.8rem;
+      padding: 21.2rem 0 0;
    `}
- */
+
 `
 
 // PAGE NUMBER & TITLE
@@ -70,7 +74,7 @@ const CrewPageTitle = styled(SubTitle)`
    color: ${props => props.theme.colors.secondary.main};
    margin-bottom: 3.2rem;
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       font-size: ${props => props.theme.fonts.size.subheading1md};
       letter-spacing: ${props => props.theme.fonts.charspace.subheadingmd};
       text-align: left;
@@ -78,10 +82,11 @@ const CrewPageTitle = styled(SubTitle)`
    `}
 
    ${media.greaterThan("xl")`
+      position: absolute;
       font-size: ${props => props.theme.fonts.size.subheading1xl};
       letter-spacing: ${props => props.theme.fonts.charspace.subheadingxl};
-      margin-bottom: 6.4rem;
-   `} */
+      margin-bottom: 0;
+   `}
 
 `
 
@@ -91,7 +96,7 @@ const CrewPageNumber = styled.span`
    font-weight: bold;
    margin-right: 1.8rem;
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       font-size: ${props => props.theme.fonts.size.subheading1md};
       letter-spacing: ${props => props.theme.fonts.charspace.subheadingmd};
    `}
@@ -99,7 +104,7 @@ const CrewPageNumber = styled.span`
    ${media.greaterThan("xl")`
       font-size: ${props => props.theme.fonts.size.subheading1xl};
       letter-spacing: ${props => props.theme.fonts.charspace.subheadingxl};
-   `} */
+   `}
 
 `
 
@@ -148,6 +153,19 @@ const CrewSlide = styled.li`
       -ms-user-select: none;
       margin: 0;
    }
+
+   ${media.greaterThan("md")`
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 0;
+   `}
+
+   ${media.greaterThan("xl")`
+      height: 100vh;
+      max-height: 70.2rem;
+      flex-direction: row-reverse;
+   `}
+
 `
 
 // CAROUSEL LEDT SIDE & RIGHT SIDE
@@ -159,16 +177,54 @@ const CrewLeftSide = styled(HeroLeftSide)`
    justify-content: center;
    align-items: flex-end;
    border-bottom: 1px solid ${props => props.theme.colors.stroke};
+
+   ${media.greaterThan("md")`
+      max-height: 53.2rem;
+      border: none;
+   `}
+
+   ${media.greaterThan("xl")`
+      max-height: 100%;
+   `}
+
 `
+
 const CrewRightSide = styled(HeroRightSide)`
    position: relative;
    padding-top: 8rem;
+
+   ${media.greaterThan("md")`
+      max-width: 59rem;
+      margin: 0 auto;
+      padding: 0 0 9rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      max-width: 100%;
+      padding: 19rem 0 9rem;
+   `}
+
 `
 
 // IMAGE (CAROUSEL LEFT SIDE)
 const CrewImage = styled(Image)`
    width: 100%;
    max-height: 22.2rem;
+
+   ${media.greaterThan("md")`
+      max-height: 53.2rem;
+      & > picture > img {
+         object-position: ${props => props.position || "bottom"} !important;
+      }
+   `}
+
+   ${media.greaterThan("xl")`
+      max-height: 70.2rem;
+      & > picture > img {
+         object-position: ${props => props.position || "right"} !important;
+      }
+   `}
+
 `
 
 // TITLE & DESCRIPTION (CAROUSEL RIGHT SIDE)
@@ -177,16 +233,54 @@ const CrewRole = styled(Title)`
    margin-bottom: 0.8rem;
    font-size: ${props => props.theme.fonts.size.heading4xs};
    opacity: 0.5;
+
+   ${media.greaterThan("md")`
+      font-size: ${props => props.theme.fonts.size.heading4md};
+   `}
+
+   ${media.greaterThan("xl")`
+      font-size: ${props => props.theme.fonts.size.heading4xl};
+      text-align: left;
+      margin-bottom: 1.6rem;
+   `}
+
 `
 
 const CrewName = styled(Title)`
    ${TitleStyles}
    margin-bottom: 1.6rem;
    font-size: ${props => props.theme.fonts.size.heading3xs};
+
+   ${media.greaterThan("md")`
+      font-size: ${props => props.theme.fonts.size.heading3md};
+   `}
+
+   ${media.greaterThan("xl")`
+      font-size: ${props => props.theme.fonts.size.heading3xl};
+      text-align: left;
+      margin-bottom: 2.7rem;
+      width: 115%;
+   `}
+
 `
 
 const CrewBio = styled(Paragraph)`
    ${ParagraphStyles}
+
+   ${media.greaterThan("md")`
+      font-size: ${props => props.theme.fonts.size.bodymd};
+      line-height: 1.75;
+      margin-bottom: 5rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      width: 80%;
+      font-size: ${props => props.theme.fonts.size.bodyxl};
+      text-align: left;
+      line-height: 1.75;
+      margin-bottom: 0;
+   `}
+
 `
 
 // CAROUSEL BULLETS
@@ -197,6 +291,16 @@ const GlideBullets = styled.div`
    height: auto;
    display: flex;
    justify-content: center;
+
+   ${media.greaterThan("md")`
+      top: 22rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      top: 58rem;
+      justify-content: flex-start;
+   `}
+
 `
 
 const GlideBullet = styled.button`
@@ -216,6 +320,16 @@ const GlideBullet = styled.button`
       opacity: 1;
       transition: opacity .3s ease;
    }
+
+   ${media.greaterThan("xl")`
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 1.5rem;
+      &:not(:last-child) {
+         margin-right: 2.4rem;
+      }
+   `}
+
 `
 
 export {
