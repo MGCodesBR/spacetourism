@@ -24,9 +24,6 @@ const options = {
    gao: 0,
    startAt: 0,
    perView: 1,
-   autoplay: 5000,
-   hoverpause: true,
-   animationDuration: 1000
 }
 
 const dataJson = require("../../../data/data.json")
@@ -52,11 +49,29 @@ const CarouselTech = ({ pagetitle,
                extension: { eq: "jpg" }
             }
             sort: { order: ASC, fields: name }
-      ) {
+         ) {
             edges {
                node {
                   childImageSharp {
                      fluid(maxWidth: 768) {
+                        ...GatsbyImageSharpFluid
+                     }
+                  }
+               }
+            }
+         }
+         carouselDesktop: allFile (
+            filter: {
+               relativeDirectory: { eq: "technology" }, 
+               name: { regex: "/image2/" }, 
+               extension: { eq: "jpg" }
+            }
+            sort: { order: ASC, fields: name }
+         ) {
+            edges {
+               node {
+                  childImageSharp {
+                     fluid(maxWidth: 515) {
                         ...GatsbyImageSharpFluid
                      }
                   }
@@ -83,7 +98,13 @@ const CarouselTech = ({ pagetitle,
                            <TechLeftSide>
                               <TechImage 
                                  imgStyle={{ objectFit: "cover" }}
-                                 fluid={content.carouselMobile.edges[slide.id - 1].node.childImageSharp.fluid}
+                                 fluid={[
+                                    content.carouselMobile.edges[slide.id - 1].node.childImageSharp.fluid,
+                                    {
+                                       ...content.carouselDesktop.edges[slide.id - 1].node.childImageSharp.fluid,
+                                       media: `(min-width: 1200px)`
+                                    }
+                                 ]}
                                  alt={slide.name}
                               />
                            </TechLeftSide>
@@ -103,9 +124,9 @@ const CarouselTech = ({ pagetitle,
                   </GlideSlides>
                </GlideTrack>
                <GlideBullets data-glide-el="controls[nav]">
-                  <GlideBullet data-glide-dir="-0"></GlideBullet>
-                  <GlideBullet data-glide-dir="-1"></GlideBullet>
-                  <GlideBullet data-glide-dir="-2"></GlideBullet>
+                  <GlideBullet data-glide-dir="=0">1</GlideBullet>
+                  <GlideBullet data-glide-dir="=1">2</GlideBullet>
+                  <GlideBullet data-glide-dir="=2">3</GlideBullet>
                </GlideBullets>
             </TechCarousel>
          </TechContainer>

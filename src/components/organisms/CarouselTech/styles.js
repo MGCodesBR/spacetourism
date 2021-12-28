@@ -4,7 +4,7 @@ import media from "../../../foundation/breakPoints"
 
 import Section from "../../atoms/Section"
 import Container from "../../atoms/Container"
-import { HeroGrid, HeroLeftSide, HeroRightSide } from "../../molecules/Hero"
+import { HeroLeftSide, HeroRightSide } from "../../molecules/Hero"
 import Title, { TitleStyles } from "../../atoms/Title"
 import SubTitle, { SubTitleStyles } from "../../atoms/SubTitle"
 import Paragraph, { ParagraphStyles } from "../../atoms/Paragraph"
@@ -34,16 +34,16 @@ const TechSection = styled(Section)`
       margin: 0;
    }
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       height: 100%;
-      min-height: 100vh;
+      min-height: 102.4rem;
       background-image: url(${BackImageTablet});
    `}
 
    ${media.greaterThan("xl")`
       min-height: 90rem;
       background-image: url(${BackImageDesktop});
-   `} */
+   `}
 
 `
        
@@ -55,16 +55,18 @@ const TechContainer = styled(Container)`
    background-color: transparent;
    z-index: 5;
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       width: 100%;
-      height: auto;
-      padding: 13.6rem 0 0;
+      max-width: 100%;
+      padding: 13.6rem 0 9.7rem;
    `}
 
    ${media.greaterThan("xl")`
-      max-width: ${props => props.theme.maxWidth.xl};
-      padding: 21.2rem 0 0;
-   `} */
+      max-width: 144rem;
+      height: auto;
+      margin: 0 auto;
+      padding: 15rem 0 10rem 16.5rem;
+   `}
 
 `
 
@@ -74,19 +76,21 @@ const TechPageTitle = styled(SubTitle)`
    color: ${props => props.theme.colors.secondary.main};
    margin-bottom: 3.2rem;
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       font-size: ${props => props.theme.fonts.size.subheading1md};
       letter-spacing: ${props => props.theme.fonts.charspace.subheadingmd};
       text-align: left;
       margin-bottom: 6rem;
+      padding-left: 3.85rem;
    `}
 
    ${media.greaterThan("xl")`
       position: absolute;
       font-size: ${props => props.theme.fonts.size.subheading1xl};
       letter-spacing: ${props => props.theme.fonts.charspace.subheadingxl};
-      margin-bottom: 0;
-   `} */
+      padding-left: 0;
+      margin-top: 6rem;
+   `}
 
 `
 
@@ -94,9 +98,9 @@ const TechPageNumber = styled.span`
    ${SubTitleStyles}
    color: ${props => props.theme.colors.secondary.dark};
    font-weight: bold;
-   margin-right: 1.8rem;
+   margin-right: 1.6rem;
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       font-size: ${props => props.theme.fonts.size.subheading1md};
       letter-spacing: ${props => props.theme.fonts.charspace.subheadingmd};
    `}
@@ -104,13 +108,20 @@ const TechPageNumber = styled.span`
    ${media.greaterThan("xl")`
       font-size: ${props => props.theme.fonts.size.subheading1xl};
       letter-spacing: ${props => props.theme.fonts.charspace.subheadingxl};
-   `} */
+   `}
 
 `
 
 // CAROUSEL GLIDE
 const TechCarousel = styled.div`
    position: relative;
+
+   ${media.greaterThan("xl")`
+      display: flex;
+      flex-direction: row-reverse;
+      padding-top: 10rem;
+   `}
+
 `
 
 const GlideTrack = styled.div`
@@ -121,71 +132,42 @@ const GlideSlides = styled.ul`
    position: relative;
    width: 100%;
    list-style: none;
-   backface-visibility: hidden;
-   transform-style: preserve-3d;
-   touch-action: pan-Y;
-   overflow: hidden;
-   white-space: nowrap;
-   display: flex;
-   flex-wrap: nowrap;
    margin: 0;
    padding: 0;
-   will-change: transform;
    box-sizing: border-box;
-   &.--dragging {
-      user-select: none;
-   }
+   transform: none !important;
+   display: grid;
+   grid-template-areas: "slide";
 `
 
 const TechSlide = styled.li`
    width: 100%;
    height: 100%;
-   flex-shrink: 0;
-   white-space: normal;
-   user-select: none;
-   -webkit-touch-callout: none;
-   -webkit-tap-highlight-color: transparent;
-   margin: 0;
-   & a {
-      user-select: none;
-      -webkit-user-drag: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      margin: 0;
+   position: relative;
+   grid-area: slide;
+   opacity: 0;
+   transition: opacity .3s ease;
+   &.glide__slide--active {
+      opacity: 1;
+      transition: opacity .3s ease;
+      z-index: 1;
    }
 
-   /* ${media.greaterThan("md")`
-      display: flex;
-      flex-direction: column-reverse;
-      padding: 0;
-   `}
-
    ${media.greaterThan("xl")`
-      height: 100vh;
-      max-height: 70.2rem;
+      display: flex;
       flex-direction: row-reverse;
-   `} */
+   `}
 
 `
 
 // CAROUSEL LEFT SIDE & RIGHT SIDE
 const TechLeftSide = styled(HeroLeftSide)`
    width: 100%;
-   /* height: 100%;
-   max-height: 22.2rem;
-   display: flex;
-   justify-content: center;
-   align-items: flex-end;
-   border-bottom: 1px solid ${props => props.theme.colors.stroke}; */
-
-   /* ${media.greaterThan("md")`
-      max-height: 53.2rem;
-      border: none;
-   `}
 
    ${media.greaterThan("xl")`
-      max-height: 100%;
-   `} */
+      width: 51.5rem;
+      height: 100%;
+   `}
 
 `
 
@@ -193,16 +175,14 @@ const TechRightSide = styled(HeroRightSide)`
    position: relative;
    padding: 10rem 2.4rem 0;
 
-   /* ${media.greaterThan("md")`
-      max-width: 59rem;
-      margin: 0 auto;
-      padding: 0 0 9rem;
+   ${media.greaterThan("md")`
+      padding: 16rem 15.5rem 0;
    `}
 
    ${media.greaterThan("xl")`
-      max-width: 100%;
-      padding: 19rem 0 9rem;
-   `} */
+      width: 68rem;
+      padding: 11.7rem 0 0 8rem;
+   `}
 
 `
 
@@ -211,20 +191,15 @@ const TechImage = styled(Image)`
    width: 100%;
    height: 17rem;
 
-   /* ${media.greaterThan("md")`
-      max-height: 53.2rem;
-      & > picture > img {
-         object-position: ${props => props.position || "bottom"} !important;
-      }
+   ${media.greaterThan("md")`
+      height: 31rem;
    `}
 
    ${media.greaterThan("xl")`
-      max-height: 70.2rem;
-      & > picture > img {
-         object-position: ${props => props.position || "right"} !important;
-      }
+      width: 100%;
+      height: 100%;
    `}
- */
+ 
 `
 
 // TITLE & DESCRIPTION (CAROUSEL RIGHT SIDE)
@@ -233,6 +208,17 @@ const TechFixedName = styled(SubTitle)`
    font-size: ${props => props.theme.fonts.size.subheading2xs};
    letter-spacing: 2.36px;
    margin-bottom: 1rem;
+
+   ${media.greaterThan("md")`
+      font-size: ${props => props.theme.fonts.size.subheading2md};
+      letter-spacing: ${props => props.theme.fonts.size.subheadingxs};
+      margin-bottom: 1.6rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      text-align: left;
+   `}
+
 `
 
 const TechName = styled(Title)`
@@ -240,84 +226,94 @@ const TechName = styled(Title)`
    margin-bottom: 1.6rem;
    font-size: ${props => props.theme.fonts.size.heading3xs};
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       font-size: ${props => props.theme.fonts.size.heading3md};
    `}
 
    ${media.greaterThan("xl")`
       font-size: ${props => props.theme.fonts.size.heading3xl};
       text-align: left;
-      margin-bottom: 2.7rem;
-      width: 115%;
-   `} */
+   `}
 
 `
 
 const TechDescription = styled(Paragraph)`
    ${ParagraphStyles}
 
-   /* ${media.greaterThan("md")`
+   ${media.greaterThan("md")`
       font-size: ${props => props.theme.fonts.size.bodymd};
       line-height: 1.75;
-      margin-bottom: 5rem;
    `}
 
    ${media.greaterThan("xl")`
-      width: 80%;
+      width: 44.4rem;
       font-size: ${props => props.theme.fonts.size.bodyxl};
       text-align: left;
-      line-height: 1.75;
-      margin-bottom: 0;
-   `} */
+   `}
 
 `
 
 // CAROUSEL BULLETS
 const GlideBullets = styled.div`
    position: absolute;
-   top: 26rem;
+   top: 20.5rem;
    width: 100%;
    height: auto;
    display: flex;
    justify-content: center;
+   font-family: ${props => props.theme.fonts.family.heading};
+   font-size: ${props => props.theme.fonts.size.heading4xs};
+   z-index: 5;
 
-   /* ${media.greaterThan("md")`
-      top: 22rem;
+   ${media.greaterThan("md")`
+      top: 37rem;
+      font-size: ${props => props.theme.fonts.size.heading4md};
    `}
 
    ${media.greaterThan("xl")`
-      top: 58rem;
+      position: relative;
+      width: auto;
+      top: 11.7rem;
+      flex-direction: column;
       justify-content: flex-start;
-   `} */
+   `}
 
 `
 
 const GlideBullet = styled.button`
-   width: 1rem;
-   height: 1rem;
-   border: none;
-   background-color: ${props => props.theme.colors.secondary.main};
-   border-radius: 1rem;
-   opacity: 0.17;
-   transition: opacity .3s ease;
+   width: 4rem;
+   height: 4rem;
+   border: 1px solid rgba(255,255,255,0.25);
+   background-color: transparent;
+   color: ${props => props.theme.colors.secondary.main};
+   border-radius: 50%;
    cursor: pointer;
+   transition: all .3s ease;
    &:not(:last-child) {
       margin-right: 1.6rem;
    }
-   &:hover,
+   &:hover {
+      border: 1px solid ${props => props.theme.colors.secondary.main};
+      transition: all .3s ease;
+   }
    &.glide__bullet--active {
-      opacity: 1;
-      transition: opacity .3s ease;
+      background-color: ${props => props.theme.colors.secondary.main};
+      color: ${props => props.theme.colors.background.main};
    }
 
-   /* ${media.greaterThan("xl")`
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 1.5rem;
+   ${media.greaterThan("md")`
+      width: 6rem;
+      height: 6rem;
+   `}
+
+   ${media.greaterThan("xl")`
+      width: 8rem;
+      height: 8rem;
       &:not(:last-child) {
-         margin-right: 2.4rem;
+         margin-right: 0;
+         margin-bottom: 3.2rem;
       }
-   `} */
+   `}
 
 `
 
